@@ -1,0 +1,33 @@
+
+
+def is_part_of_series(lst,n):
+    count=0
+    for i in range(0,n):  
+        if i==0 and lst[0]=='0':
+            count+=1
+            #print(count)  
+        elif i==1 and lst[1]=='1': 
+            count+=1
+        elif i>1:
+            res=(9*int(lst[i-1])-4*int(lst[i-2]))
+            #print(res)
+            if int(lst[i])==res:
+                count+=1
+            else:
+                break
+        else:
+            break
+    print(count)
+    if count==n: 
+        print("This list is part of series")
+    else:  
+        print("Sorry this is not the part of list")            
+             
+
+input_string =input("Enter a list element separated by space ")
+list1  = input_string.split()
+print(list1)
+l=len(list1)
+    
+result= is_part_of_series(list1,l)
+
